@@ -1,0 +1,60 @@
+/* features/scrambledGame/Scramble.css */
+.scramble-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px 0;
+}
+
+.game-board {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 300px;
+}
+
+.scrambled-word {
+  font-size: 2.5rem;
+  letter-spacing: 8px;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.letter {
+  display: inline-block;
+  animation: bounce 0.5s ease infinite alternate;
+  animation-delay: calc(var(--d, 0) * 0.1s);
+  margin: 0 5px;
+  font-family: 'Courier New', monospace;
+}
+
+.scrambled-word .letter:nth-child(1) { --d: 0; }
+.scrambled-word .letter:nth-child(2) { --d: 1; }
+.scrambled-word .letter:nth-child(3) { --d: 2; }
+.scrambled-word .letter:nth-child(4) { --d: 3; }
+.scrambled-word .letter:nth-child(5) { --d: 4; }
+.scrambled-word .letter:nth-child(6) { --d: 5; }
+.scrambled-word .letter:nth-child(7) { --d: 6; }
+.scrambled-word .letter:nth-child(8) { --d: 7; }
+
+@keyframes bounce {
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+.hint-section {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.score-board {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scrambled-word {
+    font-size: 2rem;
+    letter-spacing: 4px;
+  }
+}

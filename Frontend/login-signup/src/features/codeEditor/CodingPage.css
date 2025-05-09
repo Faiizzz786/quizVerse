@@ -1,0 +1,148 @@
+/* App.css - Custom styling */
+
+/* Base styling */
+body, html {
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
+pre {
+  margin-bottom: 0;
+  white-space: pre-wrap;
+}
+
+/* Dark mode specific styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .card {
+  border-color: #2d2d2d;
+}
+
+.dark-mode pre.bg-light {
+  background-color: #2d2d2d !important;
+  color: #e0e0e0;
+}
+
+.dark-mode .list-group-item {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+  border-color: #3d3d3d;
+}
+
+/* Problem description styling */
+.problem-description {
+  line-height: 1.7;
+}
+
+.problem-description p {
+  margin-bottom: 1rem;
+}
+
+.problem-description pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin: 1rem 0;
+}
+
+.dark-mode .problem-description pre {
+  background-color: #2d2d2d;
+}
+
+/* Test result styling */
+.test-result {
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.test-result:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .test-result {
+  border-color: #3d3d3d;
+}
+
+/* Editor container */
+.editor-container {
+  border-radius: 0 0 0.25rem 0.25rem;
+  overflow: hidden;
+}
+
+/* Badge styling */
+.badge {
+  font-size: 0.8rem;
+  padding: 0.4em 0.6em;
+}
+
+/* Adding animation to the loading state */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.loading {
+  animation: pulse 1.5s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Card hover effects */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Button hover effects */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}

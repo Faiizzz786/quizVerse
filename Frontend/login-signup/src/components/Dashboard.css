@@ -1,0 +1,527 @@
+/* Dashboard.css */
+.container {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.card-body {
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.card-body::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(0,123,255,0.1);
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+
+.card:hover .card-body::before {
+  transform: scale(4);
+}
+
+.badge {
+  font-size: 0.8rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50px;
+  animation: badgePulse 2s infinite;
+}
+
+.btn {
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255,255,255,0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.btn:hover::after {
+  animation: ripple 1s ease-out;
+}
+
+.btn-danger {
+  background: linear-gradient(45deg, #ff5e62, #ff9966);
+  border: none;
+}
+
+.btn-success {
+  background: linear-gradient(45deg, #11998e, #38ef7d);
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #396afc, #2948ff);
+  border: none;
+}
+
+.btn-warning {
+  background: linear-gradient(45deg, #f7971e, #ffd200);
+  border: none;
+  color: #fff;
+}
+
+.btn-outline-primary {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 2px solid #0d6efd;
+}
+
+.btn-outline-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #0d6efd;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.btn-outline-primary:hover {
+  color: white;
+}
+
+.btn-outline-primary:hover::before {
+  left: 0;
+}
+
+/* Welcome section with glowing effect */
+.welcome-section {
+  padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  animation: glow 8s linear infinite;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  animation: slideFadeIn 1s ease-out;
+}
+
+.filter-section {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: rgba(255,255,255,0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.form-select {
+  border-radius: 50px;
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Quiz stats badges */
+.quiz-stats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stat-badge {
+  background: rgba(0,0,0,0.05);
+  border-radius: 50px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Category badges styling */
+.badge-science {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+}
+
+.badge-history {
+  background: linear-gradient(45deg, #f7971e, #ffd200);
+}
+
+.badge-geography {
+  background: linear-gradient(45deg, #11998e, #38ef7d);
+}
+
+.badge-technology {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+}
+
+.badge-sports {
+  background: linear-gradient(45deg, #396afc, #2948ff);
+}
+
+.badge-general {
+  background: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+
+/* Top bar actions */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes badgePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(13, 110, 253, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 1;
+    transform: scale(0, 0);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(20, 20);
+  }
+}
+
+@keyframes glow {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Quiz card icon pulsing animation */
+.quiz-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0d6efd;
+  animation: iconPulse 3s infinite;
+}
+
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .action-buttons {
+    flex-wrap: wrap;
+  }
+  
+  .action-buttons .btn {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 1.5rem;
+  }
+}
+
+
+
+/* Add these styles to your Dashboard.css file */
+
+/* Login specific styles */
+.login-container {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.login-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.5s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Logo section */
+.logo-section {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  animation: glow 8s linear infinite;
+}
+
+.app-logo {
+  font-size: 3rem;
+  color: #0d6efd;
+  margin-bottom: 1rem;
+  animation: iconPulse 3s infinite;
+}
+
+.brand-name {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.app-tagline {
+  color: #666;
+  font-style: italic;
+}
+
+/* Form controls */
+.form-control {
+  border-radius: 0 6px 6px 0;
+  border: 1px solid #e0e0e0;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.input-group-text {
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.input-group:focus-within .input-group-text {
+  border-color: #0d6efd;
+  background-color: #e9f0ff;
+}
+
+/* Alerts */
+.alert-animated {
+  animation: alertSlideDown 0.5s ease-out;
+}
+
+@keyframes alertSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Success animation */
+.success-animation {
+  animation: successPulse 0.8s ease-in-out;
+}
+
+@keyframes successPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(25, 135, 84, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(25, 135, 84, 0);
+  }
+}
+
+/* Error animation */
+.error-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
+  20%, 40%, 60%, 80% {transform: translateX(5px);}
+}
+
+/* Fade in animation */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button hover effect */
+.btn-primary {
+  background: linear-gradient(45deg, #396afc, #2948ff);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #2948ff, #396afc);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover::before {
+  left: 0;
+}
+
+.btn-outline-primary {
+  border: 2px solid #0d6efd;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background: #0d6efd;
+  color: white;
+}
+
+/* Link hover effect */
+a.text-decoration-none {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+a.text-decoration-none::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #0d6efd;
+  transition: all 0.3s ease;
+}
+
+a.text-decoration-none:hover::after {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-card {
+    margin: 0 1rem;
+  }
+  
+  .logo-section {
+    padding: 1.5rem;
+  }
+  
+  .app-logo {
+    font-size: 2.5rem;
+  }
+}
